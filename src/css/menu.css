@@ -1,0 +1,164 @@
+/* Estilos para o ícone de hambúrguer */
+.hamburguer {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #EAAC15; /* Vermelho sangue */
+    margin: 6px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .logo img {
+    width: 150px;
+}
+
+.navbar .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.navbar .menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.nav-list {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+
+.nav-list li a:hover {
+    color: #f39c12;
+    transform: translateY(-5px);
+}
+
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #f39c12;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+/* MENU MOBILE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 10px;
+}
+.nav-list li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animação de transição no menu mobile */
+.nav-list li {
+    margin: 20px 0;
+}
+
+.nav-list li a {
+    font-size: 1.5rem; /* Diminui o tamanho da fonte no mobile */
+    font-weight: 600;
+}
+
+/* Oculta o botão de toggler por padrão */
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilos para o menu em telas menores */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block; /* Mostra o botão em telas menores */
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        z-index: 10; /* Garante que o botão fique acima do menu */
+    }
+    .navbar ul a {
+        display: none;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 8px 16px;
+        font-family: 'Keshiki';
+        position: relative;
+    }
+    .nav-list {
+        display: none; /* Oculta o menu por padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do header */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+        padding: 10px 0; /* Espaçamento interno */
+    }
+
+    /* Exibe o menu quando a classe 'active' está presente */
+    .navbar.active .nav-list {
+        display: block; /* Oculta o menu por padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do header */
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+        padding: 10px 0; /* Espaçamento interno */display: flex; /* Mostra o menu */
+    }
+}
+
+/* Estilos para o menu em telas maiores */
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Exibir o menu quando a classe 'active' estiver presente */
+.navbar.active .nav-list {
+    display: flex; /* ou 'block', dependendo do layout */
+}
