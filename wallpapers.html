@@ -1,13 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/menu.css">
+    <link rel="stylesheet" href="./src/css/wallpaper.css" /> <!-- Nova folha de estilo para a página wallpapers -->
+    <title>Wallpapers - Jujutsu Kaisen</title>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="./index.html" class="logo">
+                    <img class="logo" src="./src/images/logo.png" alt="Logo">
+                </a>
+                <!-- Botão de hambúrguer -->
+                <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./wallpapers.html">Wallpapers</a></li>
+                    <li><a href="#">Onde assistir</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+  <main class="wallpapers">
+    <section class="wallpaper">
+      <img src="./src/images/denji-wallpaper.jpg" alt="Wallpaper Denji" class="wallpaper-image" />
+      <div class="overlay"></div>
+      <h2 class="wallpaper-title">Denji</h2>
+    </section>
+
+    <section class="wallpaper">
+      <img src="./src/images/aki-wallpaper.jpg" alt="Wallpaper Aki" class="wallpaper-image" />
+      <div class="overlay"></div>
+      <h2 class="wallpaper-title">Aki</h2>
+    </section>
+
+    <section class="wallpaper">
+      <img src="./src/images/power-wallpaper.jpg" alt="Wallpaper Power" class="wallpaper-image" />
+      <div class="overlay"></div>
+      <h2 class="wallpaper-title">Power</h2>
+    </section>
+  </main>
+
+  <script src="./src/js/menu.js"></script>
+  <script src="./src/js/script.js"></script>
 </body>
 </html>

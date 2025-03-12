@@ -144,7 +144,6 @@
     .nav-list.active {
         display: flex; /* Exibir quando a classe 'active' for adicionada */
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.404); /* Fundo para melhor visibilidade */
         position: absolute;
         top: 60px;
         left: 0;

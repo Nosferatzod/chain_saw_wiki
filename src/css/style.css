@@ -12,7 +12,7 @@ main::after {
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(45deg, rgba(0,0,0,1) 29%, rgba(0,0,0,0.15) 75%);
+    background: linear-gradient(45deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.15) 75%);
 }
 
 main .character {
