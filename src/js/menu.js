@@ -1,9 +1,13 @@
-// Seleciona o botão de hambúrguer e o menu
 const toggleButton = document.getElementById('toggleButton');
-const navbar = document.querySelector('.navbar');
+const navList = document.getElementById('nav-list');
 
-// Adiciona um evento de clique ao botão de hambúrguer
 toggleButton.addEventListener('click', () => {
-    navbar.classList.toggle('active'); // Alterna a classe 'active' no menu
-    console.log('Classe "active" adicionada/removida:', navbar.classList.contains('active')); // Debug no console
+    if (navList.style.display === 'flex') {
+        navList.style.display = 'none'; // Oculta o menu
+    } else {
+        navList.style.display = 'flex'; // Mostra o menu
+    }
+});
+toggleButton.addEventListener('click', () => {
+    navList.classList.toggle('active'); // Adiciona ou remove a classe 'active' ao menu
 });

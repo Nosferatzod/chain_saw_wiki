@@ -1,4 +1,4 @@
-/* Estilos para o ícone de hambúrguer */
+/* Estilos para o ícone de hambúrguer menu*/
 .hamburguer {
     display: block;
     width: 40px;
@@ -107,6 +107,11 @@
 
 /* Estilos para o menu em telas menores */
 @media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        z-index: 1000;
+    }
+    
     .navbar-toggler {
         display: block; /* Mostra o botão em telas menores */
         position: absolute;
@@ -114,8 +119,9 @@
         top: 15px;
         z-index: 10; /* Garante que o botão fique acima do menu */
     }
+    
     .navbar ul a {
-        display: none;
+        color: white;
         text-decoration: none;
         margin: 0 10px;
         padding: 8px 16px;
@@ -129,36 +135,21 @@
         top: 60px; /* Ajuste conforme a altura do header */
         left: 0;
         width: 100%;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.021);
         z-index: 9;
         padding: 10px 0; /* Espaçamento interno */
     }
 
-    /* Exibe o menu quando a classe 'active' está presente */
-    .navbar.active .nav-list {
-        display: block; /* Oculta o menu por padrão */
+    /* Garante que o menu apareça ao clicar */
+    .nav-list.active {
+        display: flex; /* Exibir quando a classe 'active' for adicionada */
         flex-direction: column;
+        background: rgba(0, 0, 0, 0.404); /* Fundo para melhor visibilidade */
         position: absolute;
-        top: 60px; /* Ajuste conforme a altura do header */
+        top: 60px;
         left: 0;
         width: 100%;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 9;
-        padding: 10px 0; /* Espaçamento interno */display: flex; /* Mostra o menu */
+        padding: 10px 0;
     }
-}
 
-/* Estilos para o menu em telas maiores */
-.nav-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Exibir o menu quando a classe 'active' estiver presente */
-.navbar.active .nav-list {
-    display: flex; /* ou 'block', dependendo do layout */
 }

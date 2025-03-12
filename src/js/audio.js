@@ -3,6 +3,7 @@ const backgroundMusic = document.getElementById('background-music');
 const volumeIcon = document.getElementById('volume-icon');
 const volumeSlider = document.getElementById('volume-slider');
 
+
 // Função para iniciar a música após a primeira interação do usuário
 function startMusicOnInteraction() {
     document.addEventListener('click', () => {
