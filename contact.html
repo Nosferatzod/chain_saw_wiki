@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - Chainsaw Man</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/contact.css" />
+    <link rel="stylesheet" href="./src/css/menu.css">
+</head>
+
+<body>
+
+    <div class="background-overlay"></div>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="./index.html" class="logo">
+                    <img class="logo" src="./src/images/logo.png" alt="Logo">
+                </a>
+                <!-- Botão de hambúrguer -->
+                <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./wallpapers.html">Wallpapers</a></li>
+                    <li><a href="#">Onde assistir</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <h1 class="contact-title">Contato</h1>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required />
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone" required />
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" placeholder="Digite sua mensagem" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+    </div>
+
+    <script src="./src/js/menu.js"></script>
+</body>
+</html>

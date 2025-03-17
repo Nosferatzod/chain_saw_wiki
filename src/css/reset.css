@@ -32,13 +32,12 @@ ul {
     display: inline-flex;
     flex-direction: row-reverse;
     align-items: center;
-    position: fixed;
-    bottom: 20px;
-    left: 20px; /* Mude de right para left */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(253, 2, 2, 0);
     padding: 10px;
     border-radius: 25px;
     z-index: 1000;
+    
+    margin-top: 420px;
 }
 
 .slider .volume {

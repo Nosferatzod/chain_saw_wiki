@@ -164,6 +164,31 @@
 }
 
 
+
+/*VOLUME*/
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .slider {
+        position: fixed;
+        top: 10px; /* Posiciona o controle de volume no topo */
+        left: 50%; /* Centraliza horizontalmente */
+        flex-direction: row; /* Alinha o ícone e o slider horizontalmente */
+        align-items: center;
+        border-radius: 20px;
+        z-index: 1000;
+        height: auto; /* Garante que a altura seja automática */
+        width: auto; /* Garante que a largura seja automática */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .slider .level {
+        width: 60px; /* Reduz ainda mais o tamanho do slider */
+    }
+}
 /*HEADER*/
 
 .logo {
@@ -332,4 +357,6 @@
 .page-content .social-links a:hover::after {
     height: 100%;
 }
+
+
 
