@@ -2,7 +2,7 @@
     main .character .image, .video {
         height: 85%;
     }
-
+    
     .content {
         justify-content: flex-end;
         left: 0;
@@ -49,7 +49,7 @@
         font-size: 15px;
         line-height: 20px;
     }
-
+    
     .buttons .button img {
       max-width: 50px;  
     }
@@ -171,7 +171,7 @@
 @media (max-width: 768px) {
     .slider {
         position: fixed;
-        top: 10px; /* Posiciona o controle de volume no topo */
+        top: 300px; /* Posiciona o controle de volume no topo */
         left: 50%; /* Centraliza horizontalmente */
         flex-direction: row; /* Alinha o ícone e o slider horizontalmente */
         align-items: center;
@@ -182,12 +182,14 @@
     }
 
 
+
 }
 
 @media (max-width: 480px) {
     .slider .level {
         width: 60px; /* Reduz ainda mais o tamanho do slider */
     }
+    
 }
 /*HEADER*/
 
@@ -195,7 +197,9 @@
     width: 200px;
 }
 
-
+.hamburguer {
+    transition: all 0.3s ease;
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -356,6 +360,75 @@
 
 .page-content .social-links a:hover::after {
     height: 100%;
+}
+
+/*VOLUME*/
+
+.slider {
+    --slider-width: 100px;
+    --slider-height: 6px;
+    --slider-bg: rgb(82, 82, 82);
+    --slider-border-radius: 999px;
+    --level-color: #fff;
+    --level-transition-duration: .1s;
+    --icon-margin: 15px;
+    --icon-color: var(--slider-bg);
+    --icon-size: 25px;
+
+    cursor: pointer;
+    display: inline-flex; /* volume pracima se apagar*/
+    flex-direction: row-reverse;
+    align-items: center;
+    position: fixed;
+    left: 20px;
+    padding: 10px;
+    border-radius: 25px;
+    z-index: 1000;
+    top: 10px;
+}
+
+.slider .volume {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: var(--icon-margin);
+    color: var(--icon-color);
+    width: var(--icon-size);
+    height: auto;
+}
+
+.slider .level {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--slider-width);
+    height: var(--slider-height);
+    background: var(--slider-bg);
+    overflow: hidden;
+    border-radius: var(--slider-border-radius);
+    transition: height var(--level-transition-duration);
+    cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+    height: calc(var(--slider-height) * 2);
+}
+
+.paragrafo::selection, .heading::selection {
+    color: #EAAC15;
+}
+
+/* ICON */
+.page-content .social-links a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 

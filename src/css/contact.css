@@ -7,7 +7,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     color: #fff;
 }
 
@@ -166,14 +166,14 @@ body, html {
 
 .page-content .inner-content .heading {
     font-size: 10rem;
-    font-family: 'sd-asian';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #EAAC15;
 }
 
 .page-content .inner-content p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .page-content .buttons {
@@ -184,7 +184,7 @@ body, html {
 
 .page-content .buttons a {
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     text-decoration: none;
     margin: 0 16px;
     padding: 10px 12px;

@@ -9,6 +9,7 @@
     transition: all 0.3s ease;
 }
 
+
 .navbar {
     padding: 20px 0;
     display: flex;
@@ -43,12 +44,60 @@
     list-style-type: none;
     transition: transform 0.3s ease-in-out;
 }
+.nav-list.active li {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+.nav-list.active {
+    display: flex;
+    right: 0; 
+}
+
+.nav-list.active li {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+/* Delay para cada link */
+.nav-list.active li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-list.active li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.nav-list.active li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+
 
 .nav-list li {
     margin: 0 15px;
 }
 
 
+/* Animação do botão de hambúrguer para "X" */
+.navbar-toggler.active .hamburguer:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active .hamburguer:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .hamburguer:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
 .nav-list li a:hover {
     color: #f39c12;
     transform: translateY(-5px);
@@ -111,23 +160,14 @@
         position: relative;
         z-index: 1000;
     }
-    
+
     .navbar-toggler {
         display: block; /* Mostra o botão em telas menores */
         position: absolute;
         right: 10px;
         top: 15px;
-        z-index: 10; /* Garante que o botão fique acima do menu */
     }
-    
-    .navbar ul a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-        padding: 8px 16px;
-        font-family: 'Keshiki';
-        position: relative;
-    }
+
     .nav-list {
         display: none; /* Oculta o menu por padrão */
         flex-direction: column;
@@ -150,5 +190,27 @@
         width: 100%;
         padding: 10px 0;
     }
+    .nav-list li {
+        margin: 15px 0;
+        text-align: center;
+        opacity: 0; /* Inicia invisível */
+        transform: translateY(-20px); /* Inicia um pouco acima */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .nav-list.active {
+        display: flex;
+        right: 0; /* Desliza para a esquerda */
+    }
 
+    .nav-list.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    
+    .nav-list.active li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .nav-list.active li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
 }

@@ -13,66 +13,6 @@
 ul {
     list-style: none;
 }
-/* Estilos para o controle de volume */
-.slider {
-    /* slider */
-    --slider-width: 100px;
-    --slider-height: 6px;
-    --slider-bg: rgb(82, 82, 82);
-    --slider-border-radius: 999px;
-    /* level */
-    --level-color: #ffb700;
-    --level-transition-duration: .1s;
-    /* icon */
-    --icon-margin: 15px;
-    --icon-color: var(--slider-bg);
-    --icon-size: 25px;
-
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    background-color: rgba(253, 2, 2, 0);
-    padding: 10px;
-    border-radius: 25px;
-    z-index: 1000;
-    
-    margin-top: 420px;
-}
-
-.slider .volume {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: var(--icon-margin);
-    color: var(--icon-color);
-    width: var(--icon-size);
-    height: auto;
-}
-
-.slider .level {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: var(--slider-width);
-    height: var(--slider-height);
-    background: var(--slider-bg);
-    overflow: hidden;
-    border-radius: var(--slider-border-radius);
-    transition: height var(--level-transition-duration);
-    cursor: inherit;
-}
-
-.slider .level::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 0;
-    height: 0;
-    box-shadow: -200px 0 0 200px var(--level-color);
-}
-
-.slider:hover .level {
-    height: calc(var(--slider-height) * 2);
-}
-
 .logo{
     width: 200px;
 }

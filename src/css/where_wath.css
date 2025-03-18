@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+body, *:hover { cursor:url(../images/cursor.png), auto; }
+
+/* Banner para telas maiores */
+.banner {
+    background-image: url('../images/cinema.gif');
+}
+
+/* Banner para telas menores */
+@media (max-width: 768px) {
+    .banner {
+        background-image: url('../images/himeno.png');
+    }
+}
+
+.banner {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-title {
+    position: relative;
+    font-size: 3rem;
+    color: #EAAC15;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+/* Seção de Plataformas */
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.platform-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px #EAAC15;
+}
+
+.platform-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.platform-description {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .platforms {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .platform-card {
+        width: 80%;
+    }
+}

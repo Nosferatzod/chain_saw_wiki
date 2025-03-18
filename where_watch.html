@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onde Assistir - Chainsaw Man</title>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <link rel="stylesheet" href="./src/css/menu.css">
+    <link rel="stylesheet" href="./src/css/where_wath.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Banner Principal -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="./index.html" class="logo">
+                    <img class="logo" src="./src/images/logo.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                    <span class="hamburguer"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./wallpapers.html">Wallpapers</a></li>
+                    <li><a href="./where_watch.html">Onde assistir</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <header class="banner">
+        <div class="banner-overlay"></div>
+        <h1 class="banner-title">Onde Assistir e Ler Chainsaw Man</h1>
+    </header>
+
+    <!-- Seção de Plataformas -->
+    <main class="platforms">
+
+
+        <div class="platform-card" onclick="window.open('https://www.crunchyroll.com/pt-br/series/GVDHX8QNW/chainsaw-man?srsltid=AfmBOoq__U5eftDoVYk1mHyoLaFG-COakaoZYIBmm0QBddTfJIO4XCLL', '_blank')">
+            <img src="./src/icon/crunchyroll.png" alt="Crunchyroll" class="platform-logo" />
+            <p class="platform-description">Assista ao anime na Crunchyroll.</p>
+        </div>
+
+        <div class="platform-card" onclick="window.open('https://slimeread.com/ler/219/cap-01', '_blank')">
+            <img src="./src/icon/icon.icon" alt="Manga Plus" class="platform-logo" />
+            <p class="platform-description">Leia o mangá no Manga Plus.</p>
+        </div>
+
+        <div class="platform-card" onclick="window.open('https://www.amazon.com.br/s?k=chainsaw+man+amazon&adgrpid=126921136276&hvadid=595853587414&hvdev=c&hvlocphy=9198625&hvnetw=g&hvqmt=e&hvrand=16937994612858554808&hvtargid=kwd-1047055270039&hydadcr=20717_13349172&tag=hydrbrgk-20&ref=pd_sl_2m15k6qjfv_e', '_blank')">
+            <img src="./src/icon/amazon.avif" alt="Amazon" class="platform-logo" />
+            <p class="platform-description">Compre o mangá na Amazon.</p>
+        </div>
+    </main>
+
+        <script src="./src/js/menu.js"></script>
+    <script src="./src/js/audio.js"></script>
+</body>
+</html>

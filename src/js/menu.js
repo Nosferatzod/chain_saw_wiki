@@ -1,5 +1,6 @@
 const toggleButton = document.getElementById('toggleButton');
 const navList = document.getElementById('nav-list');
+const header = document.querySelector('.header');
 
 toggleButton.addEventListener('click', () => {
     if (navList.style.display === 'flex') {
@@ -9,5 +10,12 @@ toggleButton.addEventListener('click', () => {
     }
 });
 toggleButton.addEventListener('click', () => {
-    navList.classList.toggle('active'); // Adiciona ou remove a classe 'active' ao menu
+    // Alterna a classe 'active' no menu
+    navList.classList.toggle('active');
+
+    // Alterna a classe 'active' no header
+    header.classList.toggle('active');
+
+    // Alterna a classe 'active' no botão de hambúrguer
+    toggleButton.classList.toggle('active');
 });
