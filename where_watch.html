@@ -1,63 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onde Assistir - Chainsaw Man</title>
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link rel="stylesheet" href="./src/css/menu.css">
-    <link rel="stylesheet" href="./src/css/where_wath.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./src/css/where_wath.css">
+    <title>Onde Assistir - Chainsaw Man</title>
 </head>
 <body>
-    <!-- Banner Principal -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="./index.html" class="logo">
-                    <img class="logo" src="./src/images/logo.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-                    <span class="hamburguer"></span>
-                    <span class="hamburguer"></span>
-                    <span class="hamburguer"></span>
-                </button>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./wallpapers.html">Wallpapers</a></li>
-                    <li><a href="./where_watch.html">Onde assistir</a></li>
+    <audio id="background-music" loop>
+        <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand">
+                <img src="./src/images/logo.png" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./wallpapers.html">Wallpapers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./where_watch.html">Onde assistir</a></li>
                 </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
     <header class="banner">
         <div class="banner-overlay"></div>
-        <h1 class="banner-title">Onde Assistir e Ler Chainsaw Man</h1>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="banner-title">Onde Assistir e Ler Chainsaw Man</h1>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Seção de Plataformas -->
-    <main class="platforms">
+    <main class="container platforms py-5">
+        <div class="row g-4 justify-content-center">
+            <!-- Crunchyroll -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="platform-card" onclick="window.open('https://www.crunchyroll.com/pt-br/series/GVDHX8QNW/chainsaw-man?srsltid=AfmBOoq__U5eftDoVYk1mHyoLaFG-COakaoZYIBmm0QBddTfJIO4XCLL', '_blank')">
+                    <img src="./src/icon/crunchyroll.png" alt="Crunchyroll" class="platform-logo img-fluid">
+                    <p class="platform-description mt-3">Assista ao anime na Crunchyroll</p>
+                    <div class="platform-badge bg-warning text-dark">Streaming Oficial</div>
+                </div>
+            </div>
 
+            <!-- Manga Plus -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="platform-card" onclick="window.open('https://slimeread.com/ler/219/cap-01', '_blank')">
+                    <img src="./src/icon/icon.icon" alt="Manga Plus" class="platform-logo img-fluid">
+                    <p class="platform-description mt-3">Leia o mangá online</p>
+                    <div class="platform-badge bg-info">Leitura Digital</div>
+                </div>
+            </div>
 
-        <div class="platform-card" onclick="window.open('https://www.crunchyroll.com/pt-br/series/GVDHX8QNW/chainsaw-man?srsltid=AfmBOoq__U5eftDoVYk1mHyoLaFG-COakaoZYIBmm0QBddTfJIO4XCLL', '_blank')">
-            <img src="./src/icon/crunchyroll.png" alt="Crunchyroll" class="platform-logo" />
-            <p class="platform-description">Assista ao anime na Crunchyroll.</p>
-        </div>
-
-        <div class="platform-card" onclick="window.open('https://slimeread.com/ler/219/cap-01', '_blank')">
-            <img src="./src/icon/icon.icon" alt="Manga Plus" class="platform-logo" />
-            <p class="platform-description">Leia o mangá no Manga Plus.</p>
-        </div>
-
-        <div class="platform-card" onclick="window.open('https://www.amazon.com.br/s?k=chainsaw+man+amazon&adgrpid=126921136276&hvadid=595853587414&hvdev=c&hvlocphy=9198625&hvnetw=g&hvqmt=e&hvrand=16937994612858554808&hvtargid=kwd-1047055270039&hydadcr=20717_13349172&tag=hydrbrgk-20&ref=pd_sl_2m15k6qjfv_e', '_blank')">
-            <img src="./src/icon/amazon.avif" alt="Amazon" class="platform-logo" />
-            <p class="platform-description">Compre o mangá na Amazon.</p>
+            <!-- Amazon -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="platform-card" onclick="window.open('https://www.amazon.com.br/s?k=chainsaw+man+amazon&adgrpid=126921136276&hvadid=595853587414&hvdev=c&hvlocphy=9198625&hvnetw=g&hvqmt=e&hvrand=16937994612858554808&hvtargid=kwd-1047055270039&hydadcr=20717_13349172&tag=hydrbrgk-20&ref=pd_sl_2m15k6qjfv_e', '_blank')">
+                    <img src="./src/icon/amazon.avif" alt="Amazon" class="platform-logo img-fluid">
+                    <p class="platform-description mt-3">Compre o mangá físico</p>
+                    <div class="platform-badge bg-danger">Mídia Física</div>
+                </div>
+            </div>
         </div>
     </main>
 
-        <script src="./src/js/menu.js"></script>
-    <script src="./src/js/audio.js"></script>
+    <!-- Controle de Volume -->
+    <div class="volume-control">
+        <button class="volume-btn" id="mute-toggle">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="./src/js/main.min.js"></script>
 </body>
 </html>

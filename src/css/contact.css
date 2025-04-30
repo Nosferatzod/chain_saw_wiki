@@ -1,268 +1,240 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Fontes */
+@font-face {
+    font-family: 'sd-asian';
+    src: url('../fonts/sd-asian.ttf') format('truetype');
+    font-display: swap;
 }
 
-body, html {
-    height: 100%;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+/* Estilos Base */
+body {
+    font-family: 'Roboto', sans-serif;
     color: #fff;
+    min-height: 100vh;
 }
 
-/* Fundo temático */
+body, *:hover { 
+    cursor: url(../images/cursor.png), auto; 
+}
+
+/* Background */
 .background-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../wallpapers/maquinas.jpg'); 
+    background-image: url('../wallpapers/maquinas.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.background-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
-.contact-container {
-    position: relative;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.384);
-    border-radius: 10px;
-    text-align: center;
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.103);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
 }
 
-/* Título */
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    font-family: 'sd-asian', sans-serif;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+    position: relative;
+    color: white !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #EAAC15;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Container de Contato */
+.contact-container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.contact-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 183, 0, 0.2);
+}
+
 .contact-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
     color: #ffb700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #ffb700;
 }
 
 /* Formulário */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.form-group label {
-    font-size: 1rem;
-    margin-bottom: 5px;
+.form-label {
     color: #ffb700;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border: 2px solid #ffb700;
-    border-radius: 5px;
+.form-control {
     background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffb700;
     color: #fff;
-    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #ccc;
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #ffb700;
+    color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(255, 183, 0, 0.25);
 }
 
-.form-group textarea {
-    resize: vertical;
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
-/* Botão de enviar */
+/* Botão de Enviar */
 .submit-button {
-    padding: 10px 20px;
     background-color: #ffb700;
+    color: #000;
+    font-weight: 600;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .submit-button:hover {
     background-color: #e84118;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(232, 65, 24, 0.4);
 }
 
-/*HEADER*/
-
-.logo {
-    width: 200px;
-}
-
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.185); /* Cor preta com 50% de opacidade */
-    z-index: 0; /* Garante que fique acima do vídeo, mas abaixo do conteúdo */
-}
-
-.navbar, .page-content {
-    position: relative;
-    z-index: 1; /* Garante que fique acima da overlay */
-}
-
-.container {
-    max-width: 950px;
-    margin: auto;
-}
-
-.navbar {
-    padding: 12px 10px;
-}
-
-.navbar .container {
+/* Controle de Volume */
+.volume-control {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    z-index: 1000;
 }
 
-.navbar .logo {
-    font-family: 'sd-asian';
-    text-decoration: none;
-    font-size: 2rem;
+.volume-btn {
+    background: none;
+    border: none;
+    color: #EAAC15;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
-.navbar ul {
-    list-style-type: none;
-    display: flex;
+.volume-slider {
+    width: 100px;
+    height: 6px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    outline: none;
 }
 
-/* Remove display: block dos links no menu desktop */
-.navbar ul a {
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 8px 16px;
-    font-family: 'Keshiki';
-    position: relative;
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #EAAC15;
+    cursor: pointer;
 }
 
-.navbar ul:has(a:hover) a:not(:hover) {
-    filter: blur(10px);
+/* Responsividade */
+@media (max-width: 992px) {
+    .contact-title {
+        font-size: 2.2rem;
+    }
 }
 
-.page-content {
-    text-align: center;
-    margin-top: 12rem;
-    padding: 0 10px;
+@media (max-width: 768px) {
+    .contact-container {
+        padding-top: 80px;
+    }
+    
+    .contact-card {
+        padding: 25px;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
 }
 
-.page-content .inner-content .heading {
-    font-size: 10rem;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #EAAC15;
+@media (max-width: 576px) {
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    
+    .form-control {
+        padding: 10px 12px;
+    }
 }
-
-.page-content .inner-content p {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-.page-content .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.page-content .buttons a {
-    display: block;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    margin: 0 16px;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    min-width: 120px;
-    text-align: center;
-    position: relative;
-    backdrop-filter: blur(60px);
-    overflow: hidden;
-    z-index: 1;
-    border: 1px solid #ffffff1e;
-}
-
-.page-content .buttons a.active {
-    background-color: rgba(252, 223, 95, 0.842);
-}
-
-.page-content .buttons a.active:hover {
-    box-shadow: 0 0 40px rgb(253, 249, 2);
-}
-
-.page-content .buttons a:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    left: -100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(40deg, #ffffff00, #ffffff20, #ffffff00);
-    z-index: -1;
-}
-
-.page-content .buttons a:nth-child(2):hover::before {
-    left: 100%;
-}
-
-.page-content .buttons a:nth-child(2):hover {
-    transition-delay: .3s;
-    box-shadow: 0 0 40px rgb(247, 252, 0);
-    background-color: rgba(252, 223, 95, 0.842);
-}
-
-.page-content .social-links {
-    margin-top: 6rem;
-    display: flex;
-    justify-content: center;
-}
-
-.page-content .social-links a {
-    display: block;
-    height: 40px;
-    width: 40px;
-    margin: 0 10px;
-    border-radius: 99px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    backdrop-filter: blur(160px);
-    background: #eaae15b6;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
-
-.page-content .social-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0%;
-    background: #ffb700;
-    z-index: -1;
-}
-
-.page-content .social-links a:hover::after {
-    height: 100%;
-}
-

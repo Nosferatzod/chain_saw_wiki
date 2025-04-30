@@ -19,3 +19,36 @@ toggleButton.addEventListener('click', () => {
     // Alterna a classe 'active' no botão de hambúrguer
     toggleButton.classList.toggle('active');
 });
+// Carrossel Personalizado
+function initCarousel() {
+    const buttons = document.querySelectorAll('.buttons .button');
+    const characters = document.querySelectorAll('.character');
+    
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // Remove seleção atual
+            characters.forEach(char => char.classList.remove('selected'));
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            
+            // Adiciona seleção
+            characters[index].classList.add('selected');
+            button.classList.add('selected');
+            
+            // Controle de vídeos
+            document.querySelectorAll('video').forEach(video => {
+                video.pause();
+            });
+            
+            const selectedVideo = characters[index].querySelector('video');
+            if (selectedVideo) {
+                selectedVideo.play();
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initCarousel();
+    
+    // Restante do código do volume...
+});

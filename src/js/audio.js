@@ -71,3 +71,5 @@ window.addEventListener('load', () => {
     restoreMusicState(); // Restaura o volume e o tempo da música
     startMusicOnInteraction(); // Inicia a música após a primeira interação do usuário
 });
+
+

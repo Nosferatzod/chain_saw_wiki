@@ -1,113 +1,266 @@
-const buttons = document.querySelectorAll('.button');
-const characters = document.querySelectorAll('.character');
+document.addEventListener('DOMContentLoaded', function() {
+    // =============================================
+    // Funções Globais e Utilitárias
+    // =============================================
+    
+    // Controle de Áudio
+    function initAudioPlayer() {
+        const audio = document.getElementById('background-music');
+        const volumeSlider = document.getElementById('volume-slider');
+        const muteToggle = document.getElementById('mute-toggle');
+        
+        if (!audio || !volumeSlider || !muteToggle) return;
 
-buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('selected'));
-        characters.forEach(char => char.classList.remove('selected'));
-
-        button.classList.add('selected');
-        characters[index].classList.add('selected');
-
-        characters.forEach(character => {
-            const imageOrVideo = character.querySelector('.image, .video');
-            imageOrVideo.style.transition = 'opacity 0.5s ease-in-out';
-            imageOrVideo.style.opacity = '0';
-        });
-
-        setTimeout(() => {
-            const selectedCharacter = characters[index];
-            const selectedImageOrVideo = selectedCharacter.querySelector('.image, .video');
-            selectedImageOrVideo.style.opacity = '1';
-        }, 50);
-    });
-});
-
-//WALLPAPER
-document.addEventListener('DOMContentLoaded', function () {
-    const likeButtons = document.querySelectorAll('.btn-like');
-    const downloadButtons = document.querySelectorAll('.btn-download');
-
-    // Função para carregar o estado do like ao carregar a página
-    function loadLikes() {
-        likeButtons.forEach(button => {
-            const imageId = button.closest('.wallpaper').querySelector('.wallpaper-image').getAttribute('data-id');
-            const likeCount = button.nextElementSibling;
-
-            // Verifica se o usuário já deu like
-            if (localStorage.getItem(`liked_${imageId}`) === 'true') {
-                button.disabled = true;
-                button.style.color = '#ff4757'; // Cor do like ativo
-                likeCount.textContent = 1; // Define a contagem de likes como 1
-            } else {
-                likeCount.textContent = 0; // Define a contagem de likes como 0
+        // Configuração inicial
+        audio.volume = volumeSlider.value;
+        
+        // Tenta reproduzir automaticamente
+        const playAudio = () => {
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay bloqueado. Requer interação do usuário.");
+                    if (muteToggle) muteToggle.style.display = 'none';
+                    if (volumeSlider) volumeSlider.style.display = 'none';
+                });
             }
+        };
+        
+        // Ativa com primeiro clique
+        document.body.addEventListener('click', function initOnClick() {
+            playAudio();
+            document.body.removeEventListener('click', initOnClick);
+        }, { once: true });
+        
+        // Controles de volume
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = this.value;
+            localStorage.setItem('volume', this.value);
+            updateVolumeIcon(this.value);
+        });
+        
+        muteToggle.addEventListener('click', function() {
+            if (audio.volume > 0) {
+                localStorage.setItem('lastVolume', audio.volume);
+                audio.volume = 0;
+                volumeSlider.value = 0;
+            } else {
+                const lastVolume = localStorage.getItem('lastVolume') || 0.7;
+                audio.volume = lastVolume;
+                volumeSlider.value = lastVolume;
+            }
+            updateVolumeIcon(volumeSlider.value);
+        });
+        
+        // Restaura configurações salvas
+        const savedVolume = localStorage.getItem('volume');
+        if (savedVolume !== null) {
+            audio.volume = savedVolume;
+            volumeSlider.value = savedVolume;
+            updateVolumeIcon(savedVolume);
+        }
+        
+        function updateVolumeIcon(volume) {
+            if (!muteToggle) return;
+            const icon = muteToggle.querySelector('i') || muteToggle;
+            if (volume == 0) {
+                icon.classList.replace('fa-volume-up', 'fa-volume-mute');
+            } else {
+                icon.classList.replace('fa-volume-mute', 'fa-volume-up');
+            }
+        }
+    }
+
+    // =============================================
+    // Página de Personagens (character.html)
+    // =============================================
+    
+    function initCharacterPage() {
+        const buttons = document.querySelectorAll('.character-buttons .button, .buttons .button');
+        const characters = document.querySelectorAll('.character');
+        
+        if (buttons.length === 0 || characters.length === 0) return;
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Remove seleções atuais
+                buttons.forEach(btn => btn.classList.remove('selected'));
+                characters.forEach(char => char.classList.remove('selected'));
+                
+                // Adiciona novas seleções
+                button.classList.add('selected');
+                characters[index].classList.add('selected');
+                
+                // Controle de vídeos
+                document.querySelectorAll('.character-media, .video').forEach(media => {
+                    if (media.tagName === 'VIDEO') {
+                        media.pause();
+                    }
+                });
+                
+                // Play no vídeo selecionado
+                const selectedMedia = characters[index].querySelector('.character-media, .video');
+                if (selectedMedia && selectedMedia.tagName === 'VIDEO') {
+                    selectedMedia.play().catch(e => console.log("Erro ao reproduzir vídeo:", e));
+                }
+            });
         });
     }
 
-    // Função para dar like
-    likeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const imageId = button.closest('.wallpaper').querySelector('.wallpaper-image').getAttribute('data-id');
-            const likeCount = button.nextElementSibling;
-
-            if (localStorage.getItem(`liked_${imageId}`) !== 'true') {
-                likeCount.textContent = 1; // Incrementa a contagem de likes
-                localStorage.setItem(`liked_${imageId}`, 'true'); // Marca como like dado
-                button.disabled = true;
-                button.style.color = '#ff4757'; // Cor do like ativo
+    // =============================================
+    // Página de Wallpapers (wallpapers.html)
+    // =============================================
+    
+    function initWallpapersPage() {
+        // Sistema de Likes
+        document.querySelectorAll('.btn-like').forEach(button => {
+            button.addEventListener('click', function() {
+                const wallpaperId = this.closest('.wallpaper-card, .wallpaper')?.querySelector('img')?.getAttribute('src') || 'default';
+                const likeCount = this.nextElementSibling;
+                
+                if (localStorage.getItem(`liked_${wallpaperId}`)) {
+                    // Remove like
+                    likeCount.textContent = parseInt(likeCount.textContent) - 1;
+                    localStorage.removeItem(`liked_${wallpaperId}`);
+                    this.innerHTML = '<i class="fas fa-heart"></i>';
+                    this.classList.remove('liked');
+                } else {
+                    // Adiciona like
+                    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                    localStorage.setItem(`liked_${wallpaperId}`, 'true');
+                    this.innerHTML = '<i class="fas fa-heart" style="color: #ff4757;"></i>';
+                    this.classList.add('liked');
+                }
+            });
+            
+            // Carrega likes salvos
+            const wallpaperId = button.closest('.wallpaper-card, .wallpaper')?.querySelector('img')?.getAttribute('src') || 'default';
+            if (localStorage.getItem(`liked_${wallpaperId}`)) {
+                button.innerHTML = '<i class="fas fa-heart" style="color: #ff4757;"></i>';
+                button.classList.add('liked');
+                const likeCount = button.nextElementSibling;
+                likeCount.textContent = parseInt(likeCount.textContent) + 1;
             }
         });
-    });
 
-    // Função para baixar a imagem
-    downloadButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const imageUrl = this.getAttribute('data-image');
-            const link = document.createElement('a');
-            link.href = imageUrl;
-            link.download = imageUrl.split('/').pop(); // Nome do arquivo
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        // Download de Wallpapers
+        document.querySelectorAll('.btn-download').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imageUrl = this.getAttribute('data-image') || this.closest('.wallpaper-card, .wallpaper')?.querySelector('img')?.src;
+                if (imageUrl) {
+                    const link = document.createElement('a');
+                    link.href = imageUrl;
+                    link.download = imageUrl.split('/').pop();
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            });
         });
-    });
 
-    // Carrega os likes ao carregar a página
-    loadLikes();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.wallpaper-image');
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-    const closeModal = document.getElementById('close-modal');
-
-    // Abre o modal ao clicar na imagem
-    images.forEach(image => {
-        image.addEventListener('click', function () {
-            modal.style.display = 'block';
-            modalImage.src = this.src;
-        });
-    });
-
-    // Fecha o modal ao clicar no botão de fechar
-    closeModal.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
-
-    // Fecha o modal ao clicar fora da imagem
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+        // Modal de Wallpaper
+        const wallpaperModal = document.getElementById('wallpaperModal') ? 
+            new bootstrap.Modal(document.getElementById('wallpaperModal')) : null;
+        
+        if (wallpaperModal) {
+            const modalImg = document.getElementById('modalWallpaper');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            document.querySelectorAll('.wallpaper-img, .wallpaper-image').forEach(img => {
+                img.addEventListener('click', function() {
+                    if (modalImg) modalImg.src = this.src;
+                    if (downloadBtn) {
+                        downloadBtn.href = this.src;
+                        downloadBtn.download = this.alt?.replace(/\s+/g, '_').toLowerCase() + '.jpg' || 'wallpaper.jpg';
+                    }
+                    if (wallpaperModal) wallpaperModal.show();
+                });
+            });
+        } else {
+            // Fallback para modal customizado (caso não use Bootstrap)
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeModal = document.getElementById('close-modal');
+            
+            if (modal && modalImage) {
+                document.querySelectorAll('.wallpaper-img, .wallpaper-image').forEach(img => {
+                    img.addEventListener('click', function() {
+                        modal.style.display = 'block';
+                        modalImage.src = this.src;
+                    });
+                });
+                
+                if (closeModal) {
+                    closeModal.addEventListener('click', () => modal.style.display = 'none');
+                }
+                
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) modal.style.display = 'none';
+                });
+            }
         }
-    });
-});
+    }
 
-images.forEach(image => {
-    image.addEventListener('click', function () {
-        console.log('Imagem clicada:', this.src); // Verifique se esta mensagem aparece no console
-        modal.style.display = 'block';
-        modalImage.src = this.src;
-    });
+    // =============================================
+    // Efeitos e Comportamentos Globais
+    // =============================================
+    
+    function initGlobalEffects() {
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Preloader (opcional)
+        const preloader = document.createElement('div');
+        preloader.className = 'preloader';
+        preloader.innerHTML = `
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        `;
+        document.body.prepend(preloader);
+        
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.remove(), 500);
+            }, 500);
+        });
+
+        // Menu Mobile
+        const toggleButton = document.getElementById('toggleButton');
+        const navList = document.getElementById('nav-list');
+        
+        if (toggleButton && navList) {
+            toggleButton.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                toggleButton.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('.nav-list a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    toggleButton.classList.remove('active');
+                });
+            });
+        }
+    }
+
+    // =============================================
+    // Inicialização
+    // =============================================
+    
+    initAudioPlayer();
+    initCharacterPage();
+    initWallpapersPage();
+    initGlobalEffects();
 });
