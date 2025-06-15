@@ -19,8 +19,8 @@ body, *:hover {
 /* Navbar */
 .navbar {
     padding: 1rem 0;
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0); /* Fundo quase opaco por padrão */
 }
 
 .navbar.scrolled {
