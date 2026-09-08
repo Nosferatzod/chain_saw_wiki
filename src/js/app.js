@@ -1,3 +1,15 @@
+/*! ===========================================================================
+ *  CHAINSAW MAN WIKI
+ *  Autor: Nosferatzod
+ *  GitHub: https://github.com/Nosferatzod/chain_saw_wiki
+ *  LinkedIn: https://www.linkedin.com/in/kaua-francino-85b154183/
+ *
+ *  (c) 2025-2026 Nosferatzod. Todos os direitos reservados.
+ *  Codigo publico apenas para visualizacao. Copia, modificacao,
+ *  redistribuicao ou uso sem autorizacao por escrito sao proibidos.
+ *  Ver LICENSE. Nao remova este aviso.
+ * ========================================================================= */
+
 /* =========================================================
    CHAINSAW MAN WIKI — app.js
    Camada compartilhada: preloader, transicao de pagina, nav,
@@ -244,6 +256,21 @@
         }, { passive: true });
     }
 
+    /* ---------------------------------------------------------
+       8. ASSINATURA NO CONSOLE
+       --------------------------------------------------------- */
+    console.log(
+        '%c CHAINSAW MAN WIKI ',
+        'background:#c8102e;color:#f2ece0;font:700 16px/2.2 system-ui;letter-spacing:.3em'
+    );
+    console.log(
+        '%cDesenvolvido por Nosferatzod\n%chttps://github.com/Nosferatzod/chain_saw_wiki\n' +
+        '(c) 2025-2026 Nosferatzod. Todos os direitos reservados.\n' +
+        'Codigo publico apenas para visualizacao. Ver LICENSE.',
+        'color:#EAAC15;font:700 13px system-ui',
+        'color:#b9b1a1;font:400 12px system-ui'
+    );
+
     /* expoe utilitarios para os scripts de pagina */
-    window.CSM = { $, $$, reduceMotion };
+    window.CSM = { $, $$, reduceMotion, author: 'Nosferatzod' };
 })();

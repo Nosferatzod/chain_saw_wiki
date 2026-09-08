@@ -1,3 +1,15 @@
+/*! ===========================================================================
+ *  CHAINSAW MAN WIKI
+ *  Autor: Nosferatzod
+ *  GitHub: https://github.com/Nosferatzod/chain_saw_wiki
+ *  LinkedIn: https://www.linkedin.com/in/kaua-francino-85b154183/
+ *
+ *  (c) 2025-2026 Nosferatzod. Todos os direitos reservados.
+ *  Codigo publico apenas para visualizacao. Copia, modificacao,
+ *  redistribuicao ou uso sem autorizacao por escrito sao proibidos.
+ *  Ver LICENSE. Nao remova este aviso.
+ * ========================================================================= */
+
 /* =========================================================
    CHAINSAW MAN WIKI — DESIGN SYSTEM "TINTA & SANGUE"
    base.css  ·  tokens, reset, texturas, nav, botoes, footer
@@ -673,6 +685,12 @@ body::after {
     color: var(--paper-dim);
     font-size: .85rem;
 }
+.footer__author {
+    color: var(--chain);
+    border-bottom: 2px solid transparent;
+    transition: border-color .25s var(--ease), color .25s var(--ease);
+}
+.footer__author:hover { color: var(--blood); border-bottom-color: var(--blood); }
 
 /* ---------- 17. SCROLLBAR ---------- */
 ::-webkit-scrollbar { width: 11px; }

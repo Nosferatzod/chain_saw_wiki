@@ -76,6 +76,24 @@ python -m http.server 5500
 
 ---
 
-Projeto fan-made, sem fins lucrativos. Chainsaw Man é obra de Tatsuki Fujimoto
-(Shueisha); anime produzido pelo estúdio MAPPA. Todos os direitos pertencem aos
-seus respectivos detentores.
+## Autor
+
+Projetado e desenvolvido por **Nosferatzod**.
+
+- GitHub — [@Nosferatzod](https://github.com/Nosferatzod)
+- LinkedIn — [perfil](https://www.linkedin.com/in/kaua-francino-85b154183/)
+- Instagram — [@Nosferat_zod](https://instagram.com/Nosferat_zod)
+
+## Licença
+
+**© 2025–2026 Nosferatzod. Todos os direitos reservados.**
+
+Este código é público **apenas para visualização e avaliação de portfólio**.
+Copiar, modificar, redistribuir, hospedar ou reutilizar — no todo ou em parte —
+exige autorização prévia e por escrito do autor. Os avisos de autoria presentes
+nos arquivos não podem ser removidos. Detalhes em [LICENSE](LICENSE).
+
+> Chainsaw Man é obra de Tatsuki Fujimoto, publicada pela Shueisha; o anime é
+> produzido pelo estúdio MAPPA. Imagens, vídeos e áudio da obra pertencem aos
+> seus respectivos detentores de direitos e não são cobertos por esta licença.
+> Projeto de fã, sem fins lucrativos, feito para estudo de front-end.
