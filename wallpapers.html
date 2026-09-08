@@ -1,186 +1,244 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="./src/css/wallpaper.css">
-    <title>Chainsaw Man Wiki - Wallpapers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallpapers — Chainsaw Man Wiki</title>
+<meta name="description" content="Galeria de wallpapers e renders de Chainsaw Man. Filtre, favorite e baixe em alta resolução.">
+<meta name="theme-color" content="#0b0b0c">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230b0b0c'/%3E%3Cpath%20d='M4%2042V28h10l5-9h12l5%209h28v14z'%20fill='%23EAAC15'/%3E%3Ccircle%20cx='20'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3Ccircle%20cx='48'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./src/css/base.css">
+<link rel="stylesheet" href="./src/css/wallpaper.css">
 </head>
 <body>
-    <audio id="background-music" loop>
-        <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
-    </audio>
 
-    <!-- Navbar Bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <!-- Botão do toggler movido para o início -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<div class="preloader" role="status" aria-live="polite">
+    <div class="preloader__saw" aria-hidden="true"></div>
+    <p class="preloader__label">CARREGANDO ARTES</p>
+</div>
+
+<audio id="background-music" loop preload="metadata">
+    <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
+</audio>
+
+<header class="nav">
+    <div class="nav__inner">
+        <a href="./index.html" class="nav__brand" aria-label="Chainsaw Man Wiki — início">
+            <img src="./src/images/logo.png" alt="Chainsaw Man">
+        </a>
+        <nav class="nav__links" aria-label="Principal">
+            <a class="nav__link" href="./index.html">Início<small>ホーム</small></a>
+            <a class="nav__link" href="./character.html">Personagens<small>キャラ</small></a>
+            <a class="nav__link" href="./wallpapers.html">Wallpapers<small>壁紙</small></a>
+            <a class="nav__link" href="./where_watch.html">Onde assistir<small>視聴</small></a>
+        </nav>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
         </button>
-        
-        <!-- Conteúdo do menu -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./wallpapers.html">Wallpapers</a></li>
-                <li class="nav-item"><a class="nav-link" href="./where_watch.html">Onde assistir</a></li>
-            </ul>
-        </div>
     </div>
-</nav>
+    <div class="nav__panel">
+        <a href="./index.html">Início</a>
+        <a href="./character.html">Personagens</a>
+        <a href="./wallpapers.html">Wallpapers</a>
+        <a href="./where_watch.html">Onde assistir</a>
+    </div>
+</header>
 
-    <!-- Main Content -->
-    <main class="container-fluid wallpapers-container">
-        <div class="row g-4">
-            <!-- Wallpaper 1 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallpaper-card">
-                    <img src="./src/wallpapers/reze.png" alt="Wallpaper Reze" class="wallpaper-img">
-                    <div class="wallpaper-overlay"></div>
-                    <h3 class="wallpaper-title">Reze</h3>
-                    <div class="wallpaper-actions">
-                        <button class="btn-download" data-image="./src/wallpapers/reze.png">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="btn-like">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <span class="like-count">0</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Wallpaper 2 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallpaper-card">
-                    <img src="./src/wallpapers/makima.png" alt="Wallpaper Makima" class="wallpaper-img">
-                    <div class="wallpaper-overlay"></div>
-                    <h3 class="wallpaper-title">Makima</h3>
-                    <div class="wallpaper-actions">
-                        <button class="btn-download" data-image="./src/wallpapers/makima.png">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="btn-like">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <span class="like-count">0</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Wallpaper 3 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallpaper-card">
-                    <img src="./src/wallpapers/maquinas.jpg" alt="Wallpaper Máquinas" class="wallpaper-img">
-                    <div class="wallpaper-overlay"></div>
-                    <h3 class="wallpaper-title">Máquinas</h3>
-                    <div class="wallpaper-actions">
-                        <button class="btn-download" data-image="./src/wallpapers/maquinas.jpg">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="btn-like">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <span class="like-count">0</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Wallpaper 4 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallpaper-card">
-                    <img src="./src/wallpapers/time_makima.png" alt="Wallpaper Time Makima" class="wallpaper-img">
-                    <div class="wallpaper-overlay"></div>
-                    <h3 class="wallpaper-title">Time Makima</h3>
-                    <div class="wallpaper-actions">
-                        <button class="btn-download" data-image="./src/wallpapers/time_makima.png">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="btn-like">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <span class="like-count">0</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Adicione mais wallpapers seguindo o mesmo padrão -->
-        </div>
-    </main>
+<main>
 
-    <!-- Modal Bootstrap -->
-    <div class="modal fade" id="wallpaperModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img id="modalWallpaper" class="img-fluid" src="" alt="Wallpaper em tela cheia">
-                </div>
-                <div class="modal-footer border-0 justify-content-center">
-                    <a id="downloadBtn" href="#" class="btn btn-warning" download>
-                        <i class="fas fa-download me-2"></i>Download
-                    </a>
-                </div>
-            </div>
+<!-- ============ CABEÇALHO ============ -->
+<section class="gal-head">
+    <div class="speedlines gal-head__speed" aria-hidden="true"></div>
+    <div class="wrap-wide gal-head__inner">
+        <div>
+            <p class="kicker" data-reveal>壁紙 コレクション</p>
+            <h1 class="gal-title heading outline-title" data-reveal style="--d:70ms">Wallpapers</h1>
+            <p class="gal-sub" data-reveal style="--d:140ms">
+                Clique para abrir em tela cheia, baixe em alta ou marque como favorito —
+                os favoritos ficam salvos no seu navegador.
+            </p>
         </div>
+        <p class="gal-count" data-reveal style="--d:200ms">
+            <span id="favCount">0</span><small>favoritos</small>
+        </p>
     </div>
 
-    <!-- Controle de Volume -->
-    <div class="volume-control">
-        <button class="volume-btn" id="mute-toggle">
-            <i class="fas fa-volume-up"></i>
+    <div class="filters wrap-wide" role="tablist" aria-label="Filtrar galeria" data-reveal style="--d:240ms">
+        <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">Todos</button>
+        <button class="chip" role="tab" aria-selected="false" data-filter="wallpaper">Wallpapers</button>
+        <button class="chip" role="tab" aria-selected="false" data-filter="render">Renders</button>
+        <button class="chip chip--fav" role="tab" aria-selected="false" data-filter="fav">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i> Favoritos
         </button>
-        <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
     </div>
-    <script>
-    // Transfere o estado do áudio entre páginas
-    window.addEventListener('beforeunload', function() {
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            localStorage.setItem('audioTransferTime', audio.currentTime);
-            localStorage.setItem('audioTransferVolume', audio.volume);
-            localStorage.setItem('audioTransferMuted', audio.muted);
-        }
-    });
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            const transferTime = localStorage.getItem('audioTransferTime');
-            if (transferTime !== null) {
-                audio.currentTime = parseFloat(transferTime);
-                localStorage.removeItem('audioTransferTime');
-            }
-            
-            const transferVolume = localStorage.getItem('audioTransferVolume');
-            if (transferVolume !== null) {
-                audio.volume = parseFloat(transferVolume);
-                localStorage.removeItem('audioTransferVolume');
-            }
-            
-            const transferMuted = localStorage.getItem('audioTransferMuted');
-            if (transferMuted !== null) {
-                audio.muted = transferMuted === 'true';
-                localStorage.removeItem('audioTransferMuted');
-            }
-        }
-    });
-</script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Personalizado -->
-     <script src="./src/js/audio.js"></script>
-    <script src="./src/js/wallpaper.min.js"></script>
-    <script src="./src/js/script.js"></script>
+    <div class="chain-strip" aria-hidden="true"></div>
+</section>
+
+<!-- ============ GRADE ============ -->
+<section class="gallery-wrap">
+    <div class="wrap-wide">
+        <div class="gallery" id="gallery">
+
+            <figure class="shot shot--wide" data-cat="wallpaper" data-id="maquinas" data-full="./src/wallpapers/maquinas.jpg" data-title="Máquinas">
+                <img src="./src/wallpapers/maquinas.jpg" alt="Wallpaper Máquinas" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">機械</span>
+                    <h3>Máquinas</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot" data-cat="wallpaper" data-id="reze" data-full="./src/wallpapers/reze.png" data-title="Reze">
+                <img src="./src/wallpapers/reze.png" alt="Wallpaper Reze" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">レゼ</span>
+                    <h3>Reze</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot" data-cat="wallpaper" data-id="makima" data-full="./src/wallpapers/makima.png" data-title="Makima">
+                <img src="./src/wallpapers/makima.png" alt="Wallpaper Makima" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">マキマ</span>
+                    <h3>Makima</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot shot--tall" data-cat="wallpaper" data-id="time_makima" data-full="./src/wallpapers/time_makima.png" data-title="Time Makima">
+                <img src="./src/wallpapers/time_makima.png" alt="Wallpaper Time Makima" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">第四課</span>
+                    <h3>Time Makima</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot" data-cat="render" data-id="serra" data-full="./src/images/serra.png" data-title="Chainsaw Man">
+                <img src="./src/images/serra.png" alt="Render Chainsaw Man" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">チェンソーマン</span>
+                    <h3>Chainsaw Man</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot" data-cat="render" data-id="power" data-full="./src/images/power.png" data-title="Power">
+                <img src="./src/images/power.png" alt="Render Power" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">パワー</span>
+                    <h3>Power</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot" data-cat="render" data-id="aki" data-full="./src/images/aki.png" data-title="Aki Hayakawa">
+                <img src="./src/images/aki.png" alt="Render Aki" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">早川アキ</span>
+                    <h3>Aki Hayakawa</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+            <figure class="shot shot--wide" data-cat="render" data-id="himeno" data-full="./src/images/himeno.png" data-title="Himeno">
+                <img src="./src/images/himeno.png" alt="Render Himeno" loading="lazy">
+                <figcaption>
+                    <span class="shot__jp">姫野</span>
+                    <h3>Himeno</h3>
+                </figcaption>
+                <div class="shot__tools">
+                    <button class="tool tool--fav" type="button" aria-label="Favoritar"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                    <button class="tool tool--dl" type="button" aria-label="Baixar"><i class="fa-solid fa-download" aria-hidden="true"></i></button>
+                </div>
+            </figure>
+
+        </div>
+
+        <p class="gallery__empty" id="galleryEmpty" hidden>
+            Nenhuma arte por aqui ainda. Favorite alguma na aba <strong>Todos</strong>.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar wallpaper" hidden>
+    <button class="lightbox__close" type="button" aria-label="Fechar"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    <figure class="lightbox__frame">
+        <img id="lightboxImg" src="" alt="">
+        <figcaption>
+            <h2 id="lightboxTitle"></h2>
+            <a id="lightboxDownload" class="btn" href="#" download>
+                <i class="fa-solid fa-download" aria-hidden="true"></i> Baixar
+            </a>
+        </figcaption>
+    </figure>
+</div>
+
+<footer class="footer">
+    <div class="wrap-wide">
+        <div class="footer__grid">
+            <div>
+                <img class="footer__logo" src="./src/images/logo.png" alt="Chainsaw Man Wiki">
+                <p class="footer__meta">
+                    Projeto fan-made, sem fins lucrativos. Chainsaw Man é obra de Tatsuki Fujimoto
+                    (Shueisha); anime produzido pelo estúdio MAPPA.
+                </p>
+            </div>
+            <div class="socials">
+                <a href="https://github.com/Nosferatzod" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/Nosferat_zod" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>Chainsaw Man Wiki · Front-end</span>
+            <span>チェンソーマン ウィキ</span>
+        </div>
+    </div>
+</footer>
+
+<div class="volume-control">
+    <button class="volume-btn" id="mute-toggle" type="button" aria-label="Silenciar">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+    </button>
+    <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.45" aria-label="Volume da trilha">
+</div>
+
+<script src="./src/js/app.js"></script>
+<script src="./src/js/gallery.js"></script>
 </body>
 </html>

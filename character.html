@@ -1,188 +1,314 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Secular+One&display=swap" rel="stylesheet">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="./src/css/character.css">
-    <title>Chainsaw Man Wiki - Personagens</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personagens — Chainsaw Man Wiki</title>
+<meta name="description" content="Dossiê dos caçadores de demônios de Chainsaw Man: Denji, Power, Aki, Makima, Reze, Himeno e o próprio Chainsaw Man.">
+<meta name="theme-color" content="#0b0b0c">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230b0b0c'/%3E%3Cpath%20d='M4%2042V28h10l5-9h12l5%209h28v14z'%20fill='%23EAAC15'/%3E%3Ccircle%20cx='20'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3Ccircle%20cx='48'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./src/css/base.css">
+<link rel="stylesheet" href="./src/css/character.css">
 </head>
-<body>
-    <audio id="background-music" loop>
-        <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
-    </audio>
+<body class="page-character">
 
-    <!-- Navbar Bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <!-- Botão do toggler movido para o início -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<div class="preloader" role="status" aria-live="polite">
+    <div class="preloader__saw" aria-hidden="true"></div>
+    <p class="preloader__label">ABRINDO DOSSIÊ</p>
+</div>
+
+<audio id="background-music" loop preload="metadata">
+    <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
+</audio>
+
+<header class="nav">
+    <div class="nav__inner">
+        <a href="./index.html" class="nav__brand" aria-label="Chainsaw Man Wiki — início">
+            <img src="./src/images/logo.png" alt="Chainsaw Man">
+        </a>
+        <nav class="nav__links" aria-label="Principal">
+            <a class="nav__link" href="./index.html">Início<small>ホーム</small></a>
+            <a class="nav__link" href="./character.html">Personagens<small>キャラ</small></a>
+            <a class="nav__link" href="./wallpapers.html">Wallpapers<small>壁紙</small></a>
+            <a class="nav__link" href="./where_watch.html">Onde assistir<small>視聴</small></a>
+        </nav>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
         </button>
-        
-        <!-- Conteúdo do menu -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./wallpapers.html">Wallpapers</a></li>
-                <li class="nav-item"><a class="nav-link" href="./where_watch.html">Onde assistir</a></li>
-            </ul>
+    </div>
+    <div class="nav__panel">
+        <a href="./index.html">Início</a>
+        <a href="./character.html">Personagens</a>
+        <a href="./wallpapers.html">Wallpapers</a>
+        <a href="./where_watch.html">Onde assistir</a>
+    </div>
+</header>
+
+<main class="dossier" aria-roledescription="carrossel" aria-label="Dossiê de personagens">
+
+    <div class="dossier__stage" id="stage">
+
+        <!-- 01 — DENJI -->
+        <article class="slide is-active" style="--accent:#EAAC15" aria-hidden="false">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="metadata" poster="./src/images/denji_icon.jpg">
+                    <source src="./src/videos/denji.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">01</span>
+                <p class="kicker">主人公 · PROTAGONISTA</p>
+                <h2 class="slide__name character-name outline-title">Denji</h2>
+                <p class="slide__jp" aria-hidden="true">デンジ</p>
+                <ul class="tags">
+                    <li>Híbrido</li><li>Divisão 4</li><li>Pochita</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Protagonista de Chainsaw Man. Depois de uma vida miserável pagando a dívida
+                    do pai, Denji funde-se a <strong>Pochita</strong>, seu cachorro-demônio-motosserra,
+                    e vira o híbrido mais imprevisível da Segurança Pública. Sonhos simples,
+                    violência absurda.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Força</span><i style="--v:88%"></i></li>
+                    <li><span>Velocidade</span><i style="--v:74%"></i></li>
+                    <li><span>Caos</span><i style="--v:96%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 02 — CHAINSAW MAN -->
+        <article class="slide" style="--accent:#ff2717" aria-hidden="true">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="none" poster="./src/videos/serra.png">
+                    <source src="./src/videos/serra.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">02</span>
+                <p class="kicker">悪魔 · FORMA DEMONÍACA</p>
+                <h2 class="slide__name character-name outline-title">Chainsaw Man</h2>
+                <p class="slide__jp" aria-hidden="true">チェンソーマン</p>
+                <ul class="tags">
+                    <li>Demônio da Motosserra</li><li>Herói do Caos</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Quando Denji puxa a corda do peito, o corpo se rasga e as serras nascem da
+                    cabeça e dos braços. É a forma que <strong>apaga demônios da existência</strong> —
+                    e o motivo de todo mundo, mocinho ou vilão, estar atrás dele.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Força</span><i style="--v:99%"></i></li>
+                    <li><span>Regeneração</span><i style="--v:94%"></i></li>
+                    <li><span>Contenção</span><i style="--v:12%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 03 — POWER -->
+        <article class="slide" style="--accent:#ff5fa2" aria-hidden="true">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="none" poster="./src/videos/power.jpeg">
+                    <source src="./src/videos/power.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">03</span>
+                <p class="kicker">魔人 · FIEND DO SANGUE</p>
+                <h2 class="slide__name character-name outline-title">Power</h2>
+                <p class="slide__jp" aria-hidden="true">パワー</p>
+                <ul class="tags">
+                    <li>Blood Fiend</li><li>Divisão 4</li><li>Meowy</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Demônia do Sangue em corpo humano, caça demônios ao lado de Denji e Aki.
+                    Mente descaradamente, foge das brigas difíceis e ama o gato <strong>Meowy</strong>
+                    mais do que qualquer humano — e é exatamente por isso que a gente gosta dela.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Força</span><i style="--v:82%"></i></li>
+                    <li><span>Ego</span><i style="--v:100%"></i></li>
+                    <li><span>Higiene</span><i style="--v:9%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 04 — AKI -->
+        <article class="slide" style="--accent:#7fb3d5" aria-hidden="true">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="none" poster="./src/videos/aki.jpg">
+                    <source src="./src/videos/aki.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">04</span>
+                <p class="kicker">公安 · SEGURANÇA PÚBLICA</p>
+                <h2 class="slide__name character-name outline-title">Aki Hayakawa</h2>
+                <p class="slide__jp" aria-hidden="true">早川アキ</p>
+                <ul class="tags">
+                    <li>Contrato da Raposa</li><li>Demônio da Maldição</li><li>Divisão 4</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Caçador veterano da Divisão de Caça a Demônios do Ministério da Segurança
+                    Pública. Frio por fora, movido por vingança por dentro — e disposto a pagar
+                    <strong>anos da própria vida</strong> em contratos para conseguir poder.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Técnica</span><i style="--v:91%"></i></li>
+                    <li><span>Disciplina</span><i style="--v:95%"></i></li>
+                    <li><span>Vida restante</span><i style="--v:28%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 05 — HIMENO -->
+        <article class="slide" style="--accent:#c8a2ff" aria-hidden="true">
+            <div class="slide__media">
+                <img class="character-media" src="./src/images/himeno.png" alt="Himeno" loading="lazy">
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">05</span>
+                <p class="kicker">先輩 · VETERANA</p>
+                <h2 class="slide__name character-name outline-title">Himeno</h2>
+                <p class="slide__jp" aria-hidden="true">姫野</p>
+                <ul class="tags">
+                    <li>Contrato do Fantasma</li><li>Parceira do Aki</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Parceira de Aki e uma das veteranas da Divisão 4. Trocou o olho direito pelo
+                    <strong>Demônio Fantasma</strong> e encara a profissão com cigarro, bebida e um
+                    humor que só existe em quem já perdeu gente demais.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Experiência</span><i style="--v:87%"></i></li>
+                    <li><span>Frieza</span><i style="--v:63%"></i></li>
+                    <li><span>Lealdade</span><i style="--v:97%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 06 — MAKIMA -->
+        <article class="slide" style="--accent:#c8102e" aria-hidden="true">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="none" poster="./src/images/makima_icon.png">
+                    <source src="./src/videos/makima.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">06</span>
+                <p class="kicker">支配 · CONTROLE</p>
+                <h2 class="slide__name character-name outline-title">Makima</h2>
+                <p class="slide__jp" aria-hidden="true">マキマ</p>
+                <ul class="tags">
+                    <li>Chefe da Divisão 4</li><li>Manipulação</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>A figura mais influente da trama. Recrutou Denji, comanda a Divisão 4 e
+                    move as peças com uma calma que assusta mais do que qualquer demônio.
+                    <strong>Nada em volta dela acontece por acaso.</strong></p>
+                </div>
+                <ul class="stats">
+                    <li><span>Influência</span><i style="--v:100%"></i></li>
+                    <li><span>Mistério</span><i style="--v:98%"></i></li>
+                    <li><span>Empatia</span><i style="--v:6%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 07 — REZE -->
+        <article class="slide" style="--accent:#4bd1c4" aria-hidden="true">
+            <div class="slide__media">
+                <video class="character-media" muted loop playsinline preload="none" poster="./src/images/reze_icon.png">
+                    <source src="./src/videos/reze.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="slide__grain" aria-hidden="true"></div>
+            <div class="slide__scrim" aria-hidden="true"></div>
+            <div class="slide__body wrap-wide">
+                <span class="slide__idx" aria-hidden="true">07</span>
+                <p class="kicker">爆弾 · ARCO DA BOMBA</p>
+                <h2 class="slide__name character-name outline-title">Reze</h2>
+                <p class="slide__jp" aria-hidden="true">レゼ</p>
+                <ul class="tags">
+                    <li>Bomb Hybrid</li><li>Café</li><li>Perigo</li>
+                </ul>
+                <div class="slide__panel">
+                    <p>Aparece como a garota do café e vira o romance mais explosivo da série —
+                    literalmente. Por trás do sorriso está uma <strong>híbrida da bomba</strong>
+                    enviada para capturar o coração de Denji. Nos dois sentidos.</p>
+                </div>
+                <ul class="stats">
+                    <li><span>Poder de fogo</span><i style="--v:93%"></i></li>
+                    <li><span>Disfarce</span><i style="--v:89%"></i></li>
+                    <li><span>Sinceridade</span><i style="--v:31%"></i></li>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- contador -->
+    <div class="dossier__counter" aria-hidden="true">
+        <span id="counterNow">01</span><span class="slash">/</span><span id="counterAll">07</span>
+    </div>
+
+    <!-- miniaturas -->
+    <div class="thumbs">
+        <p class="dossier__hint" aria-hidden="true">Arraste ou escolha abaixo</p>
+        <div class="thumbs__rail" role="tablist" aria-label="Escolher personagem">
+            <button class="thumb is-active" role="tab" aria-selected="true" data-go="0">
+                <img src="./src/images/denji_icon.jpg" alt="Denji" loading="lazy"><span>Denji</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="1">
+                <img src="./src/images/serra.png" alt="Chainsaw Man" loading="lazy"><span>Serra</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="2">
+                <img src="./src/images/power_icon.jpg" alt="Power" loading="lazy"><span>Power</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="3">
+                <img src="./src/images/aki_icon.jpg" alt="Aki" loading="lazy"><span>Aki</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="4">
+                <img src="./src/images/himeno.png" alt="Himeno" loading="lazy"><span>Himeno</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="5">
+                <img src="./src/images/makima_icon.png" alt="Makima" loading="lazy"><span>Makima</span>
+            </button>
+            <button class="thumb" role="tab" aria-selected="false" data-go="6">
+                <img src="./src/images/reze_icon.png" alt="Reze" loading="lazy"><span>Reze</span>
+            </button>
         </div>
+        <div class="thumbs__progress"><i id="dossierProgress"></i></div>
     </div>
-</nav>
+</main>
 
-    <!-- Carrossel de Personagens -->
-    <div id="characterCarousel" class="carousel slide" data-bs-interval="false">
-        <div class="carousel-inner">
-            <!-- Aki -->
-            <div class="carousel-item">
-                <div class="character-container">
-                    <img src="./src/images/aki.png" class="d-block w-100 character-media" alt="Personagem Aki">
-                    <div class="character-content">
-                        <h2 class="character-name">Aki</h2>
-                        <p class="character-description">
-                            Aki Hayakawa é um dos personagens principais de Chainsaw Man, tanto
-                            no anime quanto no mangá, criado por Tatsuki Fujimoto. Ele é um
-                            caçador de demônios que trabalha para o governo, fazendo parte da
-                            Divisão de Caça a Demônios do Ministério de Segurança Pública.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Power -->
-            <div class="carousel-item">
-                <div class="character-container">
-                    <img src="./src/images/power.png" class="d-block w-100 character-media" alt="Personagem Power">
-                    <div class="character-content">
-                        <h2 class="character-name">Power</h2>
-                        <p class="character-description">
-                            Power é uma das personagens mais carismáticas de Chainsaw Man. Ela é
-                            uma demônio do sangue (Blood Fiend), mas trabalha como caçadora de
-                            demônios para a Segurança Pública ao lado de Denji e Aki.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Denji (Ativo) -->
-            <div class="carousel-item active">
-                <div class="character-container">
-                    <video class="d-block w-100 character-media" autoplay loop muted playsinline>
-                        <source src="./src/videos/denji.mp4" type="video/mp4">
-                    </video>
-                    <div class="character-content">
-                        <h2 class="character-name">Denji</h2>
-                        <p class="character-description">
-                            Denji é o protagonista de Chainsaw Man, um jovem caçador de demônios
-                            que, após uma vida miserável repleta de dívidas e dificuldades, tem
-                            sua existência transformada ao fundir-se com Pochita, seu
-                            cachorro-demônio-motosserra.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Chainsaw Man -->
-            <div class="carousel-item">
-                <div class="character-container">
-                                        <video class="d-block w-100 character-media" autoplay loop muted playsinline>
-                        <source src="./src/videos/serra.mp4" type="video/mp4">
-                    </video>
-                    <div class="character-content">
-                        <h2 class="character-name">ChainSaw Man</h2>
-                        <p class="character-description">
-                            No anime e mangá de Chainsaw Man, a transformação de Denji em Serra
-                            ocorre durante um confronto crucial, onde ele é forçado a passar por
-                            uma mudança radical em seu corpo e poder.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Makima -->
-            <div class="carousel-item">
-                <div class="character-container">
-                    <video class="d-block w-100 character-media" autoplay loop muted playsinline>
-                        <source src="./src/videos/makima.mp4" type="video/mp4">
-                    </video>
-                    <div class="character-content">
-                        <h2 class="character-name">Makima</h2>
-                        <p class="character-description">
-                            Makima é uma das personagens mais intrigantes e complexas de
-                            Chainsaw Man. Ela é, sem dúvida, uma das figuras mais influentes da
-                            trama e exerce um papel fundamental em muitos dos eventos que
-                            acontecem na história.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Reze -->
-            <div class="carousel-item">
-                <div class="character-container">
-                    <video class="d-block w-100 character-media" autoplay loop muted playsinline>
-                        <source src="./src/videos/reze.mp4" type="video/mp4">
-                    </video>
-                    <div class="character-content">
-                        <h2 class="character-name">Reze</h2>
-                        <p class="character-description">
-                            Reze é uma personagem importante na história de Chainsaw Man,
-                            especialmente no arco envolvendo a Divisão de Caça a Demônios. Ela é
-                            uma demônia com uma relação significativa com Denji.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="volume-control">
+    <button class="volume-btn" id="mute-toggle" type="button" aria-label="Silenciar">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+    </button>
+    <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.45" aria-label="Volume da trilha">
+</div>
 
-    <!-- Controles do Carrossel (Miniaturas) -->
-    <div class="character-thumbnails">
-        <div class="container-thumbnails">
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="0" class="thumbnail-btn">
-                <img src="./src/images/aki_icon.jpg" alt="Ícone Aki" class="thumbnail-img">
-            </button>
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="1" class="thumbnail-btn">
-                <img src="./src/images/power_icon.jpg" alt="Ícone Power" class="thumbnail-img">
-            </button>
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="2" class="thumbnail-btn active">
-                <img src="./src/images/denji_icon.jpg" alt="Ícone Denji" class="thumbnail-img">
-            </button>
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="3" class="thumbnail-btn">
-                <img src="./src/images/serra.png" alt="Ícone Serra" class="thumbnail-img">
-            </button>
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="4" class="thumbnail-btn">
-                <img src="./src/images/makima_icon.png" alt="Ícone Makima" class="thumbnail-img">
-            </button>
-            <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="5" class="thumbnail-btn">
-                <img src="./src/images/reze_icon.png" alt="Ícone Reze" class="thumbnail-img">
-            </button>
-        </div>
-    </div>
-
-    <!-- Controle de Volume -->
-    <div class="volume-control">
-        <button class="volume-btn" id="mute-toggle">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
-    </div>
-
-    <!-- Bootstrap JS e Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Personalizado -->
-    <script src="./src/js/audio.js"></script>
-    <script src="./src/js/script.js"></script>
+<script src="./src/js/app.js"></script>
+<script src="./src/js/dossier.js"></script>
 </body>
 </html>

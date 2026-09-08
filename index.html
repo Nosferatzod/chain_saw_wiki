@@ -1,115 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./src/icon/icon.icon" type="image/icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Chainsaw Man Wiki</title>
-    <link rel="stylesheet" href="./src/css/index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chainsaw Man — Wiki</title>
+<meta name="description" content="Wiki fan-made de Chainsaw Man: personagens, wallpapers e onde assistir. Projeto front-end com estética de mangá impresso.">
+<meta name="theme-color" content="#0b0b0c">
+<meta property="og:title" content="Chainsaw Man — Wiki">
+<meta property="og:description" content="Entre no mundo brutal e caótico de Chainsaw Man.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230b0b0c'/%3E%3Cpath%20d='M4%2042V28h10l5-9h12l5%209h28v14z'%20fill='%23EAAC15'/%3E%3Ccircle%20cx='20'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3Ccircle%20cx='48'%20cy='35'%20r='3'%20fill='%23c8102e'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="./src/css/base.css">
+<link rel="stylesheet" href="./src/css/index.css">
 </head>
 <body>
-    <audio id="background-music" loop>
-        <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
-    </audio>
 
-    <video autoplay loop muted playsinline>
-        <source src="./src/videos/chainsaw.mp4">
-    </video>
-    <div class="overlay"></div>
-    
-    <header class="header">
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <!-- Botão do toggler movido para antes da logo -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <a href="./index.html" class="navbar-brand">
-            <img class="logo" src="./src/images/logo.png" alt="Logo">
+<!-- ===== PRELOADER ===== -->
+<div class="preloader" role="status" aria-live="polite">
+    <div class="preloader__saw" aria-hidden="true"></div>
+    <p class="preloader__label">DANDO PARTIDA</p>
+</div>
+
+<!-- ===== AUDIO ===== -->
+<audio id="background-music" loop preload="metadata">
+    <source src="./src/audio/MAKAVELIGODD-Pagan Hinh.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+    <div class="nav__inner">
+        <a href="./index.html" class="nav__brand" aria-label="Chainsaw Man Wiki — início">
+            <img src="./src/images/logo.png" alt="Chainsaw Man">
         </a>
-        
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="./index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./where_watch.html">Onde assistir</a></li>
-            </ul>
-        </div>
+        <nav class="nav__links" aria-label="Principal">
+            <a class="nav__link" href="./index.html">Início<small>ホーム</small></a>
+            <a class="nav__link" href="./character.html">Personagens<small>キャラ</small></a>
+            <a class="nav__link" href="./wallpapers.html">Wallpapers<small>壁紙</small></a>
+            <a class="nav__link" href="./where_watch.html">Onde assistir<small>視聴</small></a>
+        </nav>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
-</nav>
-    </header>
+    <div class="nav__panel">
+        <a href="./index.html">Início</a>
+        <a href="./character.html">Personagens</a>
+        <a href="./wallpapers.html">Wallpapers</a>
+        <a href="./where_watch.html">Onde assistir</a>
+    </div>
+</header>
 
-    <main class="container">
-        <div class="page-content">
-            <div class="inner-content" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="heading">ChainSaw Man</h1>
-                <p class="paragrafo">Entre no mundo brutal e caótico de Chainsaw Man!</p>
-                <div class="buttons">
-                    <a href="./character.html" class="btn btn-warning btn-lg active">Personagens</a>
-                    <a href="./wallpapers.html" class="btn btn-outline-warning btn-lg">Wallpapers</a>
-                </div>
-                <div class="social-links mt-5">
-                    <a href="https://github.com/Nosferatzod" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://instagram.com/Nosferat_zod" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                </div>
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="hero__media" aria-hidden="true">
+        <video autoplay loop muted playsinline poster="./src/videos/serra.png">
+            <source src="./src/videos/chainsaw.mp4" type="video/mp4">
+        </video>
+        <div class="hero__duotone"></div>
+        <div class="hero__dots"></div>
+        <div class="hero__vignette"></div>
+    </div>
+
+    <div class="speedlines hero__speed" aria-hidden="true"></div>
+
+    <div class="hero__inner wrap-wide">
+        <div class="hero__copy">
+            <p class="kicker" data-reveal>藤本タツキ · JUMP+ · FAN WIKI</p>
+
+            <h1 class="hero__title heading outline-title" data-reveal style="--d:80ms">
+                Chainsaw<br><span class="hero__title-solid">Man</span>
+            </h1>
+
+            <div class="hero__jp" data-reveal style="--d:140ms">
+                <span class="hero__jp-bar"></span>
+                <span>チェンソーマン</span>
+            </div>
+
+            <p class="paragrafo hero__lead" data-reveal style="--d:200ms">
+                Entre no mundo brutal e caótico de <strong>Chainsaw Man</strong>. Dívidas, demônios
+                e um garoto que trocou o coração por uma motosserra.
+            </p>
+
+            <div class="hero__actions" data-reveal style="--d:260ms">
+                <a href="./character.html" class="btn">
+                    <i class="fa-solid fa-skull" aria-hidden="true"></i> Personagens
+                </a>
+                <a href="./wallpapers.html" class="btn btn--ghost">
+                    <i class="fa-solid fa-image" aria-hidden="true"></i> Wallpapers
+                </a>
+            </div>
+
+            <div class="socials hero__socials" data-reveal style="--d:320ms">
+                <a href="https://github.com/Nosferatzod" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/Nosferat_zod" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
-    </main>
-    
-    <div class="volume-control">
-        <button class="volume-btn" id="mute-toggle">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
+
+        <div class="hero__art" aria-hidden="true">
+            <div class="hero__art-halo"></div>
+            <img src="./src/images/serra.png" alt="" class="hero__art-img">
+            <span class="sfx sfx--1">ブロロロ</span>
+            <span class="sfx sfx--2">ガガガ</span>
+        </div>
     </div>
-    <script>
-    // Transfere o estado do áudio entre páginas
-    window.addEventListener('beforeunload', function() {
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            localStorage.setItem('audioTransferTime', audio.currentTime);
-            localStorage.setItem('audioTransferVolume', audio.volume);
-            localStorage.setItem('audioTransferMuted', audio.muted);
-        }
-    });
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            const transferTime = localStorage.getItem('audioTransferTime');
-            if (transferTime !== null) {
-                audio.currentTime = parseFloat(transferTime);
-                localStorage.removeItem('audioTransferTime');
-            }
-            
-            const transferVolume = localStorage.getItem('audioTransferVolume');
-            if (transferVolume !== null) {
-                audio.volume = parseFloat(transferVolume);
-                localStorage.removeItem('audioTransferVolume');
-            }
-            
-            const transferMuted = localStorage.getItem('audioTransferMuted');
-            if (transferMuted !== null) {
-                audio.muted = transferMuted === 'true';
-                localStorage.removeItem('audioTransferMuted');
-            }
-        }
-    });
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script src="./src/js/script.js"></script>
-    <script src="./src/js/audio.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            easing: 'ease-out-back'
-        });
-    </script>
+
+    <p class="hero__scroll" aria-hidden="true"><span>SCROLL</span></p>
+    <div class="chain-strip hero__chain" aria-hidden="true"></div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+        <span>Divisão 4 &bull; Segurança Pública &bull; ★ &bull; Contratos de Sangue &bull; チェンソーマン &bull; Caçadores de Demônios &bull; ★ &bull;</span>
+        <span>Divisão 4 &bull; Segurança Pública &bull; ★ &bull; Contratos de Sangue &bull; チェンソーマン &bull; Caçadores de Demônios &bull; ★ &bull;</span>
+    </div>
+</div>
+
+<!-- ============ PERSONAGENS ============ -->
+<section class="section cast">
+    <div class="wrap-wide">
+        <div class="section-head">
+            <div>
+                <p class="kicker" data-reveal>キャラクター</p>
+                <h2 class="section-title" data-reveal style="--d:60ms">O elenco <em>maldito</em></h2>
+            </div>
+            <span class="section-num" data-reveal>01</span>
+        </div>
+
+        <div class="cast__grid">
+            <a class="cast__card" href="./character.html" data-reveal>
+                <span class="cast__idx">01</span>
+                <img src="./src/images/denji_icon.jpg" alt="Denji" loading="lazy">
+                <div class="cast__meta">
+                    <h3>Denji</h3>
+                    <p>デンジ · Chainsaw Devil</p>
+                </div>
+            </a>
+            <a class="cast__card" href="./character.html" data-reveal style="--d:90ms">
+                <span class="cast__idx">02</span>
+                <img src="./src/images/power_icon.jpg" alt="Power" loading="lazy">
+                <div class="cast__meta">
+                    <h3>Power</h3>
+                    <p>パワー · Blood Fiend</p>
+                </div>
+            </a>
+            <a class="cast__card" href="./character.html" data-reveal style="--d:180ms">
+                <span class="cast__idx">03</span>
+                <img src="./src/images/aki_icon.jpg" alt="Aki Hayakawa" loading="lazy">
+                <div class="cast__meta">
+                    <h3>Aki</h3>
+                    <p>早川アキ · Contrato da Raposa</p>
+                </div>
+            </a>
+            <a class="cast__card" href="./character.html" data-reveal style="--d:270ms">
+                <span class="cast__idx">04</span>
+                <img src="./src/images/makima_icon.png" alt="Makima" loading="lazy">
+                <div class="cast__meta">
+                    <h3>Makima</h3>
+                    <p>マキマ · Controle</p>
+                </div>
+            </a>
+        </div>
+
+        <p class="cast__cta" data-reveal>
+            <a href="./character.html" class="btn btn--ghost">Ver dossiê completo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </p>
+    </div>
+</section>
+
+<!-- ============ QUOTE / MUNDO ============ -->
+<section class="section quote-block">
+    <div class="quote-block__bg" aria-hidden="true"></div>
+    <div class="wrap">
+        <figure class="quote" data-reveal>
+            <blockquote>
+                “Eu quero passar manteiga no pão.<br>Isso é <em>tudo</em> que eu quero.”
+            </blockquote>
+            <figcaption>— Denji, Divisão 4</figcaption>
+        </figure>
+
+        <div class="facts">
+            <div class="fact" data-reveal>
+                <span class="fact__num">2018</span>
+                <span class="fact__label">Início do mangá<small>週刊少年ジャンプ</small></span>
+            </div>
+            <div class="fact" data-reveal style="--d:80ms">
+                <span class="fact__num">MAPPA</span>
+                <span class="fact__label">Estúdio do anime<small>アニメ制作</small></span>
+            </div>
+            <div class="fact" data-reveal style="--d:160ms">
+                <span class="fact__num">12</span>
+                <span class="fact__label">Episódios da 1ª temporada<small>第一期</small></span>
+            </div>
+            <div class="fact" data-reveal style="--d:240ms">
+                <span class="fact__num">∞</span>
+                <span class="fact__label">Demônios pra caçar<small>悪魔</small></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA DUPLO ============ -->
+<section class="split">
+    <a class="split__half" href="./wallpapers.html" data-reveal="slice">
+        <img src="./src/wallpapers/makima.png" alt="" aria-hidden="true" loading="lazy">
+        <div class="split__inner">
+            <p class="kicker">壁紙</p>
+            <h2 class="split__title">Wallpapers</h2>
+            <p>Baixe as artes em alta e favorite as suas.</p>
+            <span class="split__go"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+    </a>
+    <a class="split__half" href="./where_watch.html" data-reveal="slice" style="--d:120ms">
+        <img src="./src/images/cinema.gif" alt="" aria-hidden="true" loading="lazy">
+        <div class="split__inner">
+            <p class="kicker">視聴</p>
+            <h2 class="split__title">Onde assistir</h2>
+            <p>Anime, mangá digital e mídia física.</p>
+            <span class="split__go"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+    </a>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="wrap-wide">
+        <div class="footer__grid">
+            <div>
+                <img class="footer__logo" src="./src/images/logo.png" alt="Chainsaw Man Wiki">
+                <p class="footer__meta">
+                    Projeto fan-made, sem fins lucrativos. Chainsaw Man é obra de Tatsuki Fujimoto
+                    (Shueisha); anime produzido pelo estúdio MAPPA. Todos os direitos pertencem aos
+                    seus respectivos detentores.
+                </p>
+            </div>
+            <div class="socials">
+                <a href="https://github.com/Nosferatzod" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/Nosferat_zod" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>Chainsaw Man Wiki · Front-end</span>
+            <span>チェンソーマン ウィキ</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== CONTROLE DE VOLUME ===== -->
+<div class="volume-control">
+    <button class="volume-btn" id="mute-toggle" type="button" aria-label="Silenciar">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+    </button>
+    <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.45" aria-label="Volume da trilha">
+</div>
+
+<script src="./src/js/app.js"></script>
 </body>
 </html>
